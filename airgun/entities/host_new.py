@@ -521,7 +521,8 @@ class NewHostEntity(HostEntity):
         view.content.module_streams.searchbar.fill(module_stream)
         # wait for filter to apply
         self.browser.plugin.ensure_page_safe()
-        view.content.module_streams.table[0][5].widget.item_select(action)
+        view.content.module_streams.table[0][5].widget.click()
+        view.content.module_streams.table[0][5].item_select(action)
         modal = ModuleStreamDialog(self.browser)
         if modal.is_displayed:
             modal.confirm()
